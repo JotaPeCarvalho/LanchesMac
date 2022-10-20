@@ -1,0 +1,28 @@
+﻿@model LancheListViewModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+@if(ViewData["Erro"]  != null)
+{
+    <h1>@ViewData["Erro"]</h1>
+}
+else
+{
+   
+<div>
+    <h1>@Model.CategoriaAtual</h1>
+</div> 
+}
+
+
+
+<div class="container">
+    <div class="row">
+        @foreach(var lanche in Model.Lanches) 
+        {
+            <partial name="_LanchesResumo" for="@lanche"/>
+        }
+    </div>
+</div>
